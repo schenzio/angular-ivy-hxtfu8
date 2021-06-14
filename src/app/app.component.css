@@ -1,0 +1,21 @@
+p {
+  font-family: Lato;
+}
+.cls-1{
+  fill:#fff;
+  }
+.chap{
+  fill:#d7232a;
+  }
+#line{
+  fill:#dc3e44;
+}
+/*<!--.cls-4{fill:#f5ccce;}-->*/
+text#title{
+  font-size: 6.5em;
+  font-variant: small-caps;
+}
+text{
+  font-style: italic;
+  font-size: 2.5em;
+}
