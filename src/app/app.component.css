@@ -18,4 +18,12 @@ text#title{
 text{
   font-style: italic;
   font-size: 2.5em;
+}/*
+#section{
+  display: none;
+}*/
+.navList{
+  border: 0;
+  font-weight: normal;
+  background-color: white;
 }

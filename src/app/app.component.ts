@@ -1,32 +1,58 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('openClose', [
+      state('open', style({
+        display: 'block',
+      })),
+      state('closed', style({
+        display: 'none'
+      })),
+      transition('open => closed', [
+        animate('1s')
+      ]),
+      transition('closed => open', [
+        animate('1s')
+      ]),
+    ]),
+  ]
+
 })
 export class AppComponent implements OnInit {
   title: string = 'la povertà sanitaria';
   exp: string = 'clicca sulle parti del logo';
-  logoIndex = document.getElementsByClassName('chap');
-  index = ['intro', 'parte1', 'parte2', 'parte3', 'parte4'];
-  section: number = 0;
+  logoIndex: HTMLCollection = document.getElementsByClassName('chap');
+  index: Array<string> = ['intro', 'sezione1', 'sezione2', 'sezione3'];
 
+  selection: string = undefined;
+  subtitle: string = "";
+  /*isOpen = true;
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }*/
   change(node: any, color: string) {
     node.style.fill = color;
+    let section = document.getElementById('nav').children[node.id];
+    }
+
+  showChapter(n: string){
+    this.selection = n;
+    this.subtitle = this.index[n];
   }
 
-  test() {
-    console.log(this.logoIndex);
-  }
-  showChapter(n){
-    alert(n);
-    this.section = n
-    //this.section = this.index[n];
-    /*switch(n){
-      case 1: {alert("botta1")};
-      case 2: alert("botta2") 
-    }*/
+  test(){
+  //  alert("funge");
   }
 
   ngOnInit() {
@@ -42,7 +68,7 @@ export class AppComponent implements OnInit {
         () => this.change(elem, '#d7232a'),
         false
       );
-      elem.addEventListener('click', () => this.showChapter(i), false);
+      elem.addEventListener('click', () => this.showChapter(elem.id), false);
     }
   }
 }
