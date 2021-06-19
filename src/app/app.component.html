@@ -2,7 +2,7 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 1476.23 428.93">
   <g id="logo" data-name="Livello 1">
-    <circle #cap4 id="3" class="cls-1" (mouseover)="change(cap4, '#eb836a')" (mouseout)="change(cap4, 'white')" (click)="showChapter(cap4.id)" cx="249.74" cy="250.39" r="142.5"/>
+    <circle id="3" class="chap" cx="249.74" cy="250.39" r="142.5"/>
 
     <path id="0" class="chap" d="M230.62,56.94C233.19,32.2,242.21,13,264.69,2.46c10.06-4.73,17.95-2.66,24.55,6.4,12.47,17.12,12.86,38.21,1.3,56-5.65,8.7-13.43,15.42-20.51,22.79-2.74,2.85-19.67,1.64-23.42-1.61C237.34,78.06,231.94,67.92,230.62,56.94Z"/>
     
@@ -19,9 +19,8 @@
 </svg>
 
 <nav id='nav'>
-  <button *ngFor="let chapter of index" class="navList">{{chapter}}</button>
+  <button *ngFor="let chapter of index, index as i" class="navList" [ngStyle]="{'font-weight': chapter.weight ? 'bold' : 'normal'}" (mouseover)="focus(i)" (mouseout)="defocus(i)">{{chapter.title}}</button>
 </nav>
 
 <h2>{{subtitle}}</h2>
 <app-chapter1 [selection]="selection" ></app-chapter1>
-
