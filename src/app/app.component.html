@@ -1,5 +1,4 @@
-
-
+<div id="home">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 1476.23 428.93">
   <g id="logo" data-name="Livello 1">
     <circle id="3" class="chap" cx="249.74" cy="250.39" r="142.5"/>
@@ -19,8 +18,10 @@
 </svg>
 
 <nav id='nav'>
-  <button *ngFor="let chapter of index, index as i" class="navList" [ngStyle]="{'font-weight': chapter.weight ? 'bold' : 'normal'}" (mouseover)="focus(i)" (mouseout)="defocus(i)">{{chapter.title}}</button>
+  <button *ngFor="let chapter of index, index as i" class="navList" [ngStyle]="{'font-weight': chapter.hover ? 'bold' : 'normal', 'color': chapter.hover ? '#dc3e44' : 'black'}" (mouseover)="focus(i)" (mouseout)="defocus(i)" (click)="showChapter(i)">{{chapter.title}}</button>
 </nav>
+</div>
 
-<h2>{{subtitle}}</h2>
-<app-chapter1 [selection]="selection" ></app-chapter1>
+<app-chapter1 [selection]="selection" [subtitle]="subtitle" ></app-chapter1>
+<!--
+<app-scroll-story [selection]="selection" [subtitle]="subtitle"></app-scroll-story>-->

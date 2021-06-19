@@ -7,6 +7,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { Template } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   selector: 'app-chapter1',
@@ -32,9 +33,8 @@ import {
 })
 export class Chapter1Component implements OnInit {
   @Input() selection: string;
-  
+  @Input() subtitle: string;
   isOpen = true;
-
   toggle() {
     this.isOpen = !this.isOpen;
   }

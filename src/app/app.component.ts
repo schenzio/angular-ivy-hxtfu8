@@ -9,7 +9,7 @@ import {
 
 export class chapter {
   title: string;
-  weight: boolean
+  hover: boolean
 }
 
 @Component({
@@ -39,12 +39,11 @@ export class AppComponent implements OnInit {
   title: string = 'la povertà sanitaria';
   exp: string = 'clicca sulle parti del logo';
   logoIndex: HTMLCollection = document.getElementsByClassName('chap');
-  //index: Array<string> = ['intro', 'sezione1', 'sezione2', 'sezione3'];
   index: Array<chapter> = [
-    {title:'intro', weight: false}, 
-    {title: 'sezione1', weight: false}, 
-    {title: 'sezione2', weight: false}, 
-    {title: 'sezione3', weight: false}
+    {title: 'intro', hover: false}, 
+    {title: 'sezione1', hover: false}, 
+    {title: 'sezione2', hover: false}, 
+    {title: 'sezione3', hover: false}
   ];
   selection: string = undefined;
   subtitle: string = "";
@@ -52,21 +51,21 @@ export class AppComponent implements OnInit {
   toggle() {
     this.isOpen = !this.isOpen;
   }*/
-  focus(id) {
-    this.index[id].weight=true;
+  focus(id: any) {
+    this.index[id].hover=true;
     document.getElementById(id).style.fill = '#eb836a';
     }
-  defocus(id){
-      this.index[id].weight=false;
+  defocus(id: any){
+      this.index[id].hover=false;
       if(id == '3'){
         document.getElementById(id).style.fill = 'white';
       } else {
         document.getElementById(id).style.fill = '#d7232a';
       }
   }
-  showChapter(n: string){
+  showChapter(n){
     this.selection = n;
-    this.subtitle = this.index[n];
+    this.subtitle = this.index[n].title;
   }
 
   test(){
