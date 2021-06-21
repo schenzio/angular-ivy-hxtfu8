@@ -21,8 +21,7 @@
   <button *ngFor="let chapter of index, index as i" class="navList" [ngStyle]="{'font-weight': chapter.hover ? 'bold' : 'normal', 'color': chapter.hover ? '#dc3e44' : 'black'}" (mouseover)="focus(i)" (mouseout)="defocus(i)" (click)="showChapter(i)">{{chapter.title}}</button>
 </nav>
 </div>
-
-<app-chapter1 [selection]="selection" [subtitle]="subtitle" ></app-chapter1>
 <!--
-<app-scroll-story [selection]="selection" [subtitle]="subtitle"></app-scroll-story>-->
-<img src='assets/up.png' />
+<app-chapter1 [selection]="selection" [subtitle]="subtitle" ></app-chapter1>
+-->
+<app-scroll-story [selection]="selection"></app-scroll-story>
