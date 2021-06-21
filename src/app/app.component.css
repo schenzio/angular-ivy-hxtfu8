@@ -32,6 +32,16 @@ nav {
 }
 .navList{
   border: 0;
-  font-size: 1.3em;
+  font-size: 1.5em;
   background-color: inherit;
+}
+svg#up{
+  width: 5%;
+  fill:hsl(358, 72%, 49%);
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+}
+#up:hover{
+  fill:#eb836a;
 }

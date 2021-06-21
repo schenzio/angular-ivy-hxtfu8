@@ -7,10 +7,7 @@ import { Component, OnInit, SimpleChanges, Input } from '@angular/core';
 })
 export class ScrollStoryComponent implements OnInit {
   @Input() selection: string;
-  test(){
-    this.selection="home";
-    this.ngOnChanges();
-  }
+ 
   ngOnInit() {
   }
   ngOnChanges() {

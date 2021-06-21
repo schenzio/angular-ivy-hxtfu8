@@ -45,8 +45,8 @@ export class AppComponent implements OnInit {
     {title: 'sezione2', hover: false}, 
     {title: 'sezione3', hover: false}
   ];
-  selection: string = undefined;
-  subtitle: string = "";
+  selection: string;
+  //subtitle: string = "";
   /*isOpen = true;
   toggle() {
     this.isOpen = !this.isOpen;
