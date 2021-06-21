@@ -7,11 +7,18 @@ import { Component, OnInit, SimpleChanges, Input } from '@angular/core';
 })
 export class ScrollStoryComponent implements OnInit {
   @Input() selection: string;
-  
+  test(){
+    this.selection="home";
+    this.ngOnChanges();
+  }
   ngOnInit() {
   }
   ngOnChanges() {
-    let chapter = document.getElementById("section"+this.selection);
+    if (this.selection!="home"){
+      var chapter = document.getElementById("section"+this.selection);
+    } else {
+      var chapter = document.getElementById("home");
+    }
     chapter.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 }

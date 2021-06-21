@@ -1,15 +1,33 @@
+#scroll-story{
+  padding: 10%;
+}
+section{
+  padding-top: 5%;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+h2{
+  font-size: 2.3em;
+}
 .testdx{
-  width: 66%;
-  padding-top: 10%;
-  padding-left: 3%;
-  padding-right: 6%;
+  width: 80%;
+  text-align: right
 }
 
 .testsx{
-  width: 66%;
-  padding-top: 10%;
-  padding-left: 10%;
+  width: 80%;
+  padding-left: 5%;
+ 
 }
-section{
-  padding: 3%
+.viz{
+  margin: 3%;
+}
+svg#up{
+  width: 5%;
+  fill:hsl(358, 72%, 49%);
+  position: fixed;
+  
+}
+#up:hover{
+  fill:#eb836a;
 }
