@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import {
   trigger,
   state,
@@ -51,6 +51,13 @@ export class AppComponent implements OnInit {
   toggle() {
     this.isOpen = !this.isOpen;
   }*/
+ 
+        scrollHandler(event) {
+          console.log("Scroll Event");
+          alert(3);
+     
+        }
+        
   focus(id: any) {
     this.index[id].hover=true;
     document.getElementById(id).style.fill = '#eb836a';
