@@ -66,6 +66,13 @@ export class AppComponent implements OnInit {
   showChapter(n){
     this.selection = n;
     //this.subtitle = this.index[n].title;
+     if (this.selection!="home"){
+      var chapter = document.getElementById("section"+this.selection);
+    } else {
+      var chapter = document.getElementById("home");
+    }
+    chapter.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  
   }
 
   test(){

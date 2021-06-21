@@ -6,10 +6,10 @@ import { Component, OnInit, SimpleChanges, Input } from '@angular/core';
   styleUrls: ['./scroll-story.component.css']
 })
 export class ScrollStoryComponent implements OnInit {
-  @Input() selection: string;
+  //@Input() selection: string;
  
   ngOnInit() {
-  }
+  }/*
   ngOnChanges() {
     if (this.selection!="home"){
       var chapter = document.getElementById("section"+this.selection);
@@ -17,5 +17,5 @@ export class ScrollStoryComponent implements OnInit {
       var chapter = document.getElementById("home");
     }
     chapter.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-  }
+  }*/
 }
