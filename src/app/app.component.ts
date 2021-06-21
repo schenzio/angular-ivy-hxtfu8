@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
   }
   showChapter(n){
     this.selection = n;
-    this.subtitle = this.index[n].title;
+    //this.subtitle = this.index[n].title;
   }
 
   test(){
