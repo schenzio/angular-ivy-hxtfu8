@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {
   trigger,
   state,
@@ -6,7 +6,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import { WindowRefService } from './window-ref.service';
+
 export class chapter {
   title: string;
   hover: boolean
@@ -16,6 +16,7 @@ export class chapter {
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+ 
   animations: [
     trigger('openClose', [
       state('open', style({
@@ -31,8 +32,7 @@ export class chapter {
         animate('1s')
       ]),
     ]),
-  ]
-
+  ],
 })
 
 export class AppComponent implements OnInit {
@@ -46,20 +46,18 @@ export class AppComponent implements OnInit {
     {title: 'sezione3', hover: false}
   ];
   selection: string;
-  constructor(private winRef: WindowRefService) {
-    // getting the native window obj
-    console.log('Native window obj', winRef.nativeWindow);
-}
+
   //subtitle: string = "";
   /*isOpen = true;
   toggle() {
     this.isOpen = !this.isOpen;
   }*/
-
+ 
   focus(id: any) {
     this.index[id].hover=true;
     document.getElementById(id).style.fill = '#eb836a';
     }
+  
   defocus(id: any){
       this.index[id].hover=false;
       if(id == '3'){
@@ -77,11 +75,6 @@ export class AppComponent implements OnInit {
       var chapter = document.getElementById("home");
     }
     chapter.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-  
-  }
-
-  test(){
-  //  alert("funge");
   }
 
   ngOnInit() {
