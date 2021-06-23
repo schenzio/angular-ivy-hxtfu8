@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 #home{
   margin: 3%;
   background: url();
